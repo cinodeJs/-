@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习</title>
+	<script type="text/javascript" src="./jquery.min.js"></script>
+	<style>
+			#box{
+				width: 800px;
+				height: 800px;
+			}
+			h1{
+				width:100%;
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+			}
+			h2{
+				width:100%;
+				height: 80px;
+				line-height: 50px;
+				text-align: center;
+			}
+			p{
+				height: 50px;
+				margin-left: 12%;
+				margin-bottom: 20px;
+				line-height: 50px;
+				border: 1px solid black;
+			}
+	</style>
+</head>
+<body>
+<div id="box">
+</div>
+
+
+	<script type="text/javascript">
+		// var arr =[['1','2'],['3']];
+
+		// for(var i=1;i<arr.length;i++){
+			
+		// 	document.write(arr);
+		// }
+
+
+		// var obj=[
+		// 	{name:'aaaaa','list':[{name:'一'},{name:'新闻'}]},
+		// 	{name:'bbbbb','list':[{name:'二'},{name:'最新'}]}
+		// ]
+		// for(var i in obj){
+		// 	$('#box').append('<li>'+obj[i].name+'</li>')
+		// 	for(var j in obj[i].list){
+		// 		$('li').eq(i).append('<b>'+obj[i].list[j].name+'</b>')
+		// 	}
+		// }
+		// 
+		// 
+		// 
+	var arr=[{
+        title:"喜迎两会",
+        content:"两会的召开，是在全面建设小康社会。。。。",
+        comments:[{content:[{name:"我是评论1"},{name:"我是评论1的评论"}]},{content:[{name:"我是评论2"},{name:"我是评论2的评论"}]}]
+    }]	
+
+    for(var i in arr){
+    	$('#box').append('<h1>'+arr[i].title+'</h1>');
+    	$('#box').append('<h2>'+arr[i].content+'</h2>');
+    	for(var j in arr[i].comments){
+    		for(var z in arr[i].comments[j].content){
+    			$('#box').append('<p>'+arr[i].comments[j].content[z].name+'</p>')
+    		}
+    	}
+    }
+	</script>
+</body>
+</html>
