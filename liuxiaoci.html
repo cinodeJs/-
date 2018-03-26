@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery-1.11.3.min.js"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    h2{
+        text-align: center;
+        line-height: 60px;
+    }
+    h3{
+        text-align: center;
+        line-height: 60px;
+    }
+    h5{
+        text-align: center;
+        line-height: 60px;
+    }
+</style>
+
+<body>
+    <div id="box">
+
+    </div>
+    <script>
+        var arr = [{
+            title: "喜迎两会",
+            content: "两会的召开，是在全面建设小康社会。。。。",
+            comments: [{
+                content: [{
+                    name: "我是评论1"
+                }, {
+                    name: "我是评论1的评论"
+                }]
+            }, {
+                content: [{
+                    name: "我是评论2"
+                }, {
+                    name: "我是评论2的评论"
+                }]
+            },{
+                content: [{
+                    name: "我是评论3"
+                }, {
+                    name: "我是评论3的评论"
+                }]
+            }] 
+        }]
+
+
+        for(var i in arr){
+            $('#box').append('<h2>'+arr[i].title+'</h2>')
+            $('#box').append('<h3>'+arr[i].content+'</h3>')
+            for(var k in arr[i].comments){
+                for(var z in arr[i].comments[k].content)
+                $('#box').append('<h5>'+arr[i].comments[k].content[z].name+'</h5>')
+            }
+            // console.log()
+        }
+    </script>
+
+</body>
+
+</html>
